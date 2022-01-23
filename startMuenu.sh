@@ -4,8 +4,8 @@
 ###########################
 
 myFolder="$(pwd)"
-# myFolder="./voci_menu"
-myArray=( $(ls "$myFolder") )
+myFolder="./voci_menu"
+#myArray=( $(ls "$myFolder") )
 
 myArray2=("TERMINA " "selezionare per uscire") 
 for i in "${myArray[@]}"; do
