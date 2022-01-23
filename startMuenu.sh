@@ -3,13 +3,13 @@
 # Description: semplice menu in whiptail
 ###########################
 
-myFolder="$(pwd)"
+myFolder="$(pwd)/mieifile"
 # myFolder="./voci_menu"
 myArray=( $(ls "$myFolder") )
 
 myArray2=("TERMINA " "selezionare per uscire") 
 for i in "${myArray[@]}"; do
-  myDesc="head -1 $myFolder/$i" 
+  myDesc="head -3 $myFolder/$i" 
   myArray2+=("$i" "$($myDesc)")
 done
 
