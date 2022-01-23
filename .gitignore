@@ -1,0 +1,4 @@
+.env
+./runMe.sh
+./bash_functions
+./bash_functions/*
