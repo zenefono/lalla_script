@@ -9,7 +9,9 @@ myArray=( $(ls "$myFolder") )
 
 myArray2=("TERMINA " "selezionare per uscire") 
 for i in "${myArray[@]}"; do
-  myDesc="head -3 $myFolder/$i" 
+ myDesc="head -3 $myFolder/$i"
+  # myDesc="sed -n '3p' < $myFolder/$i"
+  #myDesc="sed \"1q;d\"  $myFolder/$i"
   myArray2+=("$i" "$($myDesc)")
 done
 
