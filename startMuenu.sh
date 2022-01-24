@@ -5,7 +5,8 @@
 
 # myFolder="$(pwd)/mieifile"
 myFolder="$(pwd)/voci_menu"
-myArray=( $(ls -1p $myFolder | sed 's/^\(.*\)/"\1"/' ) )
+myArray=( $(ls -1p $myFolder ) )
+#  myArray=( $(ls -1p $myFolder | sed "s/^\(.*\)/'\1'/" ) )
 
 read -p "echo myArray..."
 echo "${myArray[*]}"
@@ -25,9 +26,16 @@ for i in "${myArray[@]}"; do
   echo "$myFolder/$i"
 # echo "stampo myDesc"
   echo $myDesc
- read -p "premi ENTER per continuare... "
-  myArray2+=("$i" "$($myDesc)")
+  myDesc1="$($myDesc)"
+  echo $myDesc1
+  read -p "premi ENTER per continuare... "
+  myArray2+=("$i" "$myDesc1")
 done
+
+read -p "echo myArray2..."
+echo "${myArray2[*]}"
+echo "array of ${#myArray2[@]} elements"
+read -p "press enter..."
 
 while [ "$result" != "TERMINA " ]; do
   result=$( whiptail --title "xTITLEx" --menu "choose: " 16 78 10 "${myArray2[@]}" 3>&2 2>&1 1>&3 )
