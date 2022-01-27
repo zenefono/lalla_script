@@ -39,7 +39,7 @@ done
 
 while [ "$result" != "TERMINA " ]; do
   result=$( whiptail --title "xTITLEx" --menu "choose: " 16 78 10 "${myArray2[@]}" 3>&2 2>&1 1>&3 )
-  [ "$result" != "TERMINA " ] && cat "$myFolder/${result}" && echo ""
+  [ "$result" != "TERMINA " ] && clear && "$myFolder/${result}" && echo ""
   [ "$result" != "TERMINA " ] && read -p "Press ENTER to continue... "
 done
 
